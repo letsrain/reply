@@ -102,7 +102,7 @@ public class MessageController {
         List<String> divNames = new ArrayList<>();
         for (int i = 0; i < alllMsgs.size(); i++) {
             int num = i + 1;
-            divNames.add("#msg" + num + "_div");
+            divNames.add("#msg" + num);
         }
         model.addAttribute("divNames", divNames);
 
