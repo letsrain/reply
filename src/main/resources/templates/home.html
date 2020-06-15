@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Sassy | App Landing Page">
+    <meta name="description" content="Quick Reply - it's easy">
     <meta name="author" content="droitlab">
     <!-- SITE TITLE -->
-    <title>Sassy | App Landing Page</title>
+    <title>Quick Reply - it's easy</title>
+
     <!-- STYLESHEETS -->
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
@@ -40,12 +41,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand ex" href="http://droitthemes.com/html/lite/sassy/">
-                            <img class="main-logo" style="" src="images/sassy_white.png" alt="Home">
-                            <img class="logo-blue" src="images/sassy_black.png" alt="Home">
+                        <a class="navbar-brand ex" th:href="@{/}">
+                            <img class="main-logo" style="" th:src="@{/images/quick-reply-logo.png}" alt="Home">
+                            <img class="logo-blue" th:src="@{/images/quick-reply-logo.png}" alt="Home">
                         </a>
-                        <!--Get-Now-Button-->
-                        <a class="btn-getnow new_btn" href="#">Get Now</a>
+<!--                        &lt;!&ndash;Get-Now-Button&ndash;&gt;-->
+<!--                        <a class="btn-getnow new_btn" href="#">Get Now</a>-->
                     </div>
                     <div class="collapse navbar-collapse multi_page_menu_item" id="myNavbar">
                         <ul id="menu-one-page" class="nav navbar-nav navbar-right multi">
@@ -53,9 +54,9 @@
 
                             <li class="menu-item"><a title="Services" th:href="@{/messages/add}">Add my own reply</a></li>
 
-                            <li class="menu-item current_page_item active"><a title="Home" href="#home">Home</a></li>
-                            <li class="menu-item"><a title="Services" href="#services">Services</a></li>
-                            <li class="menu-item"><a title="Dashboard" href="#dashboard">Dashboard</a></li>
+                            <li class="menu-item current_page_item"><a title="Home" th:href="@{/messages/email}">e-mail</a></li>
+                            <li class="menu-item"><a title="Services" th:href="@{/messages/messenger}">messengers</a></li>
+                            <li class="menu-item"><a title="Dashboard" th:href="@{/messages/social}">social networks</a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,15 +87,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h6 class="s_banner_text">Software Solution</h6>
-                        <h1 class="s_banner_title">Give yourself the best chance <br>of success with Sassy</h1>
-                        <a href="#" class="saas_btn">Get Started</a>
+                        <h6 class="s_banner_text">Quick Reply</h6>
+                        <h1 class="s_banner_title">Give quick reply <br>for every message!</h1>
+                        <a th:href="@{/messages/all}" class="saas_btn">View all replies</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="saas_home_img">
-            <img src="images/new/saas/mackbook.png" alt="">
+            <img th:src="@{/images/new/saas/main.png}" alt="">
         </div>
     </section>
     <section class="n_features_area pt_0 " id="services">
@@ -104,7 +105,7 @@
                     <div class="n_features_item">
                         <a th:href="@{/messages/email}">
                         <div class="n_round_icon">
-                            <img src="images/new/icon/pincel.png" alt="" >
+                            <img th:src="@{/images/new/icon/email.png}" alt="" >
                         </div>
                         </a>
                         <h3>Email</h3>
@@ -115,7 +116,7 @@
                     <div class="n_features_item">
                         <a th:href="@{/messages/messenger}">
                         <div class="n_round_icon">
-                            <img src="images/new/icon/graph.png" alt="" >
+                            <img th:src="@{/images/new/icon/messenger.png}" alt="" >
                         </div>
                         </a>
                         <h3>Messengers</h3>
@@ -126,7 +127,7 @@
                     <div class="n_features_item">
                         <a th:href="@{/messages/social}">
                         <div class="n_round_icon">
-                            <img src="images/new/icon/Bar.png" alt="" >
+                            <img th:src="@{/images/new/icon/social.png}" alt="" >
                         </div>
                         </a>
                         <h3>Social Networks</h3>
