@@ -90,13 +90,9 @@
                     <div class="blog-post">
 
 
-                        <div th:each="msg, stats : ${allMsgs}" class="text" style="overflow-y:scroll" th:id="'msg' + ${stats.count} + '_div'"
-                             th:text="${msg.text}" data-tooltip="Copied!">
-                        </div>
 
-
-                        <textarea th:each="msg, stats : ${allMsgs}" th:id="'msg' + ${stats.count}" th:text="${msg.text}"
-                                  hidden=true>
+                        <textarea th:each="msg, stats : ${allMsgs}" th:id="'msg' + ${stats.count}" class="text" style="overflow-y:scroll" th:text="${msg.text}"
+                                  data-tooltip="Copied!">
 </textarea>
 
 
@@ -132,13 +128,13 @@
     <a href="#" class="scrollup"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
     <!-- Scripts -->
 
-    <script th:inline="javascript">
+   <script th:inline="javascript">
         var s;
         var list = [[${divNames}]];
         list.forEach(function (value) {
             $(value).on('click', function () {
 
-                s = this.id.replace("_div", "");
+                s = this.id;
                 var aux = document.createElement("textarea");
                 aux.value = document.getElementById(s).value;
                 document.body.appendChild(aux);
